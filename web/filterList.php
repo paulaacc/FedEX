@@ -272,7 +272,7 @@ render('header');
                 data: {
                     'action': "updateFilter",
                     'flight_postal_code': $('#edit_filter_postal_code').val(),
-                    'station_code': $('#station').val(),
+                    'station_code': $('#edit_station').val(),
                     'id': $('#edit_filter_id').val()
                 },
 
@@ -291,6 +291,9 @@ render('header');
     $(document).ready(function () {
 
         $("#filter_postal_code").select2({
+            templateResult: formatState
+        });
+        $("#edit_filter_postal_code").select2({
             templateResult: formatState
         });
 

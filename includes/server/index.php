@@ -100,7 +100,7 @@ switch ($route) {
                     `station_code`=:station_code, 
                     `flight_postal_code`=:flight_postal_code 
                     WHERE 
-                    `filter_flight_id`=:id";
+                    `flight_filter_id`=:id";
         $rs = new JSONRecordSet();
         $retval = $rs->setRecord(
             $sqlUpdate, null, array(
