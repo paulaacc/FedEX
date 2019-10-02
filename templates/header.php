@@ -1,5 +1,5 @@
 <?php session_start() ?>
-<?php isset($_SESSION['username']) || die(header("Location: " . ($_SERVER['SERVER_NAME'] == "localhost" ? "http://localhost/newranksys/index.php" : "http://" . $_SERVER['SERVER_NAME'] . "/index.php"))); ?>
+<?php isset($_SESSION['username']) || die(header("Location: " . ($_SERVER['SERVER_NAME'] == "localhost" ? "http://localhost/fedex/index.php" : "http://" . $_SERVER['SERVER_NAME'] . "/index.php"))); ?>
 <!DOCTYPE html>
 <html lang="en">
 

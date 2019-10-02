@@ -6,9 +6,6 @@
  * Time: 9:24 AM
  */
  
- 
-//Azure DB connection data
-//EB Connection
 
 define('dbName', 'fedex');
 define('userName', 'root');

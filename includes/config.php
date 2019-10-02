@@ -10,8 +10,8 @@
 //Azure DB connection data
 //EB Connection
 
-define('dbName', 'newranksys');
+define('dbName', 'fedex');
 define('userName', 'root');
 define('passWord', '');
-define('dsn','mysql:host=127.0.0.1;dbname=newranksys');
+define('dsn','mysql:host=127.0.0.1;dbname=fedex');
 

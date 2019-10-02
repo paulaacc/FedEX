@@ -34,7 +34,11 @@ render('header');
                 <tr>
                     <th>Filter ID</th>
                     <th>Station Code</th>
+                    <th>Destination Code</th>
                     <th>Postal Code</th>
+                    <th>Company Name</th>
+                    <th>Address 1</th>
+                    <th>Address 2</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -42,7 +46,11 @@ render('header');
                 <tr>
                     <th>Filter ID</th>
                     <th>Station Code</th>
+                    <th>Destination Code</th>
                     <th>Postal Code</th>
+                    <th>Company Name</th>
+                    <th>Address 1</th>
+                    <th>Address 2</th>
                     <th>Action</th>
                 </tr>
                 </tfoot>
@@ -58,7 +66,11 @@ render('header');
                     echo "<tr>";
                     echo "<td>" . $row['flight_filter_id'] . "</td>";
                     echo "<td>" . $row['station_code'] . "</td>";
+                    echo "<td>" . $row['flight_destination_code'] . "</td>";
                     echo "<td>" . $row['flight_postal_code'] . "</td>";
+                    echo "<td>" . $row['flight_company_name'] . "</td>";
+                    echo "<td>" . $row['flight_address1'] . "</td>";
+                    echo "<td>" . $row['flight_address2'] . "</td>";
                     echo "<td><button class='editButton btn btn-primary' data-toggle='modal' data-target='#editFilter' value='" . $row['flight_filter_id'] . "' id='" . $row['flight_filter_id'] . "'>Edit</button></td>";
                     echo "</tr>";
                 }
@@ -98,11 +110,63 @@ render('header');
 
                         <!-- Select Basic -->
                         <div class="form-group">
+                            <label class="col-md-3 control-label" for="filter_destination_code">Destination Code</label>
+                            <div class="col-md-9">
+                                <select id="filter_destination_code" name="filter_destination_code" class="form-control" style="width: 100%;">
+                                    <?php
+                                    $apiPath = $path . "action=option_destination_code";
+                                    echo file_get_contents($apiPath);
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
                             <label class="col-md-3 control-label" for="filter_postal_code">Postal Code</label>
                             <div class="col-md-9">
                                 <select id="filter_postal_code" name="filter_postal_code" class="form-control" style="width: 100%;">
                                     <?php
                                     $apiPath = $path . "action=option_postal_code";
+                                    echo file_get_contents($apiPath);
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="filter_company_name">Company Name</label>
+                            <div class="col-md-9">
+                                <select id="filter_company_name" name="filter_company_name" class="form-control" style="width: 100%;">
+                                    <?php
+                                    $apiPath = $path . "action=option_company_name";
+                                    echo file_get_contents($apiPath);
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="filter_address1">Address 1</label>
+                            <div class="col-md-9">
+                                <select id="filter_address1" name="filter_address1" class="form-control" style="width: 100%;">
+                                    <?php
+                                    $apiPath = $path . "action=option_address1";
+                                    echo file_get_contents($apiPath);
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="filter_address2">Address 2</label>
+                            <div class="col-md-9">
+                                <select id="filter_address2" name="filter_address2" class="form-control" style="width: 100%;">
+                                    <?php
+                                    $apiPath = $path . "action=option_address2";
                                     echo file_get_contents($apiPath);
                                     ?>
                                 </select>
@@ -161,11 +225,63 @@ render('header');
 
                         <!-- Select Basic -->
                         <div class="form-group">
+                            <label class="col-md-3 control-label" for="edit_filter_destination_code">Destination Code</label>
+                            <div class="col-md-9">
+                                <select id="edit_filter_destination_code" name="edit_filter_destination_code" class="form-control" style="width: 100%;">
+                                    <?php
+                                    $apiPath = $path . "action=option_destination_code";
+                                    echo file_get_contents($apiPath);
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
                             <label class="col-md-3 control-label" for="edit_filter_postal_code">Postal Code</label>
                             <div class="col-md-9">
                                 <select id="edit_filter_postal_code" name="edit_filter_postal_code" class="form-control" style="width: 100%;">
                                     <?php
                                     $apiPath = $path . "action=option_postal_code";
+                                    echo file_get_contents($apiPath);
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="edit_filter_company_name">Company Name</label>
+                            <div class="col-md-9">
+                                <select id="edit_filter_company_name" name="edit_filter_company_name" class="form-control" style="width: 100%;">
+                                    <?php
+                                    $apiPath = $path . "action=option_company_name";
+                                    echo file_get_contents($apiPath);
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="edit_filter_address1">Address 1</label>
+                            <div class="col-md-9">
+                                <select id="edit_filter_address1" name="edit_filter_address1" class="form-control" style="width: 100%;">
+                                    <?php
+                                    $apiPath = $path . "action=option_address1";
+                                    echo file_get_contents($apiPath);
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="edit_filter_address2">Address 2</label>
+                            <div class="col-md-9">
+                                <select id="edit_filter_address2" name="edit_filter_address2" class="form-control" style="width: 100%;">
+                                    <?php
+                                    $apiPath = $path . "action=option_address2";
                                     echo file_get_contents($apiPath);
                                     ?>
                                 </select>
@@ -237,6 +353,10 @@ render('header');
                     $('#edit_filter_id').val(data['results'][0]['flight_filter_id']);
                     $('#edit_station').val(data['results'][0]['station_code']);
                     $('#edit_filter_postal_code').val(data['results'][0]['flight_postal_code']).trigger('change.select2');
+                    $('#edit_filter_destination_code').val(data['results'][0]['flight_destination_code']).trigger('change.select2');
+                    $('#edit_filter_company_name').val(data['results'][0]['flight_company_name']).trigger('change.select2');
+                    $('#edit_filter_address1').val(data['results'][0]['flight_address1']).trigger('change.select2');
+                    $('#edit_filter_address2').val(data['results'][0]['flight_address2']).trigger('change.select2');
                 },
 
                 type: 'POST'
@@ -250,6 +370,10 @@ render('header');
                 data: {
                     'action': "addFilter",
                     'flight_postal_code': $('#filter_postal_code').val(),
+                    'flight_destination_code': $('#filter_destination_code').val(),
+                    'flight_company_name': $('#filter_company_name').val(),
+                    'flight_address1': $('#filter_address1').val(),
+                    'flight_address2': $('#filter_address2').val(),
                     'station_code': $('#station').val()
                 },
 
@@ -272,6 +396,10 @@ render('header');
                 data: {
                     'action': "updateFilter",
                     'flight_postal_code': $('#edit_filter_postal_code').val(),
+                    'flight_destination_code': $('#edit_filter_destination_code').val(),
+                    'flight_company_name': $('#edit_filter_company_name').val(),
+                    'flight_address1': $('#edit_filter_address1').val(),
+                    'flight_address2': $('#edit_filter_address2').val(),
                     'station_code': $('#edit_station').val(),
                     'id': $('#edit_filter_id').val()
                 },
@@ -287,16 +415,239 @@ render('header');
                 type: 'POST'
             })
         });
+
+        //SELECT CHANGE FILTER - ADD
+        $('#filter_destination_code').change(function(){
+            $.ajax({
+                url: "http://localhost/fedex/includes/server/index.php",
+
+                data: {
+                    'action': "option_postal_code",
+                    'flight_destination_code': $('#filter_destination_code').val()
+                },
+
+                error: function(xhr, status, error){
+                    // alert(xhr.responseText);
+                    $('#filter_postal_code').html(xhr.responseText);
+                    $('#filter_company_name').html("");
+                    $('#filter_address1').html("");
+                    $('#filter_address2').html("");
+                },
+
+                success: function(data){
+                    $('#drum_id').innerHTML;
+                    console.log(data);
+                }
+            })
+        });
+        $('#filter_postal_code').change(function(){
+            $.ajax({
+                url: "http://localhost/fedex/includes/server/index.php",
+
+                data: {
+                    'action': "option_company_name",
+                    'flight_destination_code': $('#filter_destination_code').val(),
+                    'flight_postal_code': $('#filter_postal_code').val()
+                },
+
+                error: function(xhr, status, error){
+                    // alert(xhr.responseText);
+                    $('#filter_company_name').html(xhr.responseText);
+                    $('#filter_address1').html("");
+                    $('#filter_address2').html("");
+                },
+
+                success: function(data){
+                    $('#drum_id').innerHTML;
+                    console.log(data);
+                }
+            })
+        });
+        $('#filter_company_name').change(function(){
+            $.ajax({
+                url: "http://localhost/fedex/includes/server/index.php",
+
+                data: {
+                    'action': "option_address1",
+                    'flight_destination_code': $('#filter_destination_code').val(),
+                    'flight_postal_code': $('#filter_postal_code').val(),
+                    'flight_company_name': $('#filter_company_name').val()
+                },
+
+                error: function(xhr, status, error){
+                    // alert(xhr.responseText);
+                    $('#filter_address1').html(xhr.responseText);
+                    $('#filter_address2').html("");
+                },
+
+                success: function(data){
+                    $('#drum_id').innerHTML;
+                    console.log(data);
+                }
+            })
+        });
+        $('#filter_address1').change(function(){
+            $.ajax({
+                url: "http://localhost/fedex/includes/server/index.php",
+
+                data: {
+                    'action': "option_address2",
+                    'flight_destination_code': $('#filter_destination_code').val(),
+                    'flight_postal_code': $('#filter_postal_code').val(),
+                    'flight_company_name': $('#filter_company_name').val(),
+                    'flight_address1': $('#filter_address1').val()
+                },
+
+                error: function(xhr, status, error){
+                    // alert(xhr.responseText);
+                    $('#filter_address2').html(xhr.responseText);
+                },
+
+                success: function(data){
+                    $('#drum_id').innerHTML;
+                    console.log(data);
+                }
+            })
+        });
+
+        //SELECT CHANGE FILTER - EDIT
+        $('#edit_filter_destination_code').change(function(){
+            $.ajax({
+                url: "http://localhost/fedex/includes/server/index.php",
+
+                data: {
+                    'action': "option_postal_code",
+                    'flight_destination_code': $('#edit_filter_destination_code').val()
+                },
+
+                error: function(xhr, status, error){
+                    // alert(xhr.responseText);
+                    $('#edit_filter_postal_code').html(xhr.responseText);
+                    $('#edit_filter_company_name').html("");
+                    $('#edit_filter_address1').html("");
+                    $('#edit_filter_address2').html("");
+                },
+
+                success: function(data){
+                    $('#drum_id').innerHTML;
+                    console.log(data);
+                }
+            })
+        });
+        $('#edit_filter_postal_code').change(function(){
+            $.ajax({
+                url: "http://localhost/fedex/includes/server/index.php",
+
+                data: {
+                    'action': "option_company_name",
+                    'flight_destination_code': $('#edit_filter_destination_code').val(),
+                    'flight_postal_code': $('#edit_filter_postal_code').val()
+                },
+
+                error: function(xhr, status, error){
+                    // alert(xhr.responseText);
+                    $('#edit_filter_company_name').html(xhr.responseText);
+                    $('#edit_filter_address1').html("");
+                    $('#edit_filter_address2').html("");
+                },
+
+                success: function(data){
+                    $('#drum_id').innerHTML;
+                    console.log(data);
+                }
+            })
+        });
+        $('#edit_filter_company_name').change(function(){
+            $.ajax({
+                url: "http://localhost/fedex/includes/server/index.php",
+
+                data: {
+                    'action': "option_address1",
+                    'flight_destination_code': $('#edit_filter_destination_code').val(),
+                    'flight_postal_code': $('#edit_filter_postal_code').val(),
+                    'flight_company_name': $('#edit_filter_company_name').val()
+                },
+
+                error: function(xhr, status, error){
+                    // alert(xhr.responseText);
+                    $('#edit_filter_address1').html(xhr.responseText);
+                    $('#edit_filter_address2').html("");
+                },
+
+                success: function(data){
+                    $('#drum_id').innerHTML;
+                    console.log(data);
+                }
+            })
+        });
+        $('#edit_filter_address1').change(function(){
+            $.ajax({
+                url: "http://localhost/fedex/includes/server/index.php",
+
+                data: {
+                    'action': "option_address2",
+                    'flight_destination_code': $('#edit_filter_destination_code').val(),
+                    'flight_postal_code': $('#edit_filter_postal_code').val(),
+                    'flight_company_name': $('#edit_filter_company_name').val(),
+                    'flight_address1': $('#edit_filter_address1').val()
+                },
+
+                error: function(xhr, status, error){
+                    // alert(xhr.responseText);
+                    $('#edit_filter_address2').html(xhr.responseText);
+                },
+
+                success: function(data){
+                    $('#drum_id').innerHTML;
+                    console.log(data);
+                }
+            })
+        });
+
+
     });
     $(document).ready(function () {
 
         $("#filter_postal_code").select2({
             templateResult: formatState
         });
+
+        $("#filter_destination_code").select2({
+            templateResult: formatState
+        });
+
+        $("#filter_company_name").select2({
+            templateResult: formatState
+        });
+
+        $("#filter_address1").select2({
+            templateResult: formatState
+        });
+
+        $("#filter_address2").select2({
+            templateResult: formatState
+        });
+
+
         $("#edit_filter_postal_code").select2({
             templateResult: formatState
         });
 
+        $("#edit_filter_destination_code").select2({
+            templateResult: formatState
+        });
+
+        $("#edit_filter_company_name").select2({
+            templateResult: formatState
+        });
+
+        $("#edit_filter_address1").select2({
+            templateResult: formatState
+        });
+
+        $("#edit_filter_address2").select2({
+            templateResult: formatState
+        });
     });
 
     function formatState(state) {

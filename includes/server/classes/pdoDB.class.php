@@ -15,7 +15,6 @@ Class pdoDB {
   }
   private function __clone() {
   }
-
   /**
    * Return DB connection or create initial connection
    * @return object (PDO connection)
